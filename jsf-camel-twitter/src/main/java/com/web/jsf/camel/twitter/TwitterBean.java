@@ -4,16 +4,11 @@ import java.io.Serializable;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
-//@ManagedBean(name = "twitterBean")
-//@SessionScoped
 public class TwitterBean implements Serializable {
-
-   //;
 
     private TwitterSearchBean appManager = null;
 
     public TwitterBean() {
-       // System.out.println("TwitterBean: constructor called ");
 
     }
 
@@ -23,8 +18,8 @@ public class TwitterBean implements Serializable {
         ExternalContext externalContext = context.getExternalContext();
         appManager = context.getApplication().evaluateExpressionGet(
                 context, "#{twitterSearchBean}", TwitterSearchBean.class);
-      //  System.out.println("appManager### " + appManager);
-        appManager.getMessageList().add(0,"Search Key: "+appManager.getKeyword()+ " | " + message);
+        //  System.out.println("appManager### " + appManager);
+        appManager.getMessageList().add(0, "Search Key: " + appManager.getKeyword() + " | " + message);
 
         //System.out.println("appManager.getKeyword()#### " + appManager.getKeyword());
         return null;
